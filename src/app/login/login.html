@@ -5,24 +5,27 @@
     <mat-grid-tile colspan="2">
       <div class="container">
         <!-- formulario -->
-        <form novalidate>
+        <form [formGroup]="formulario" novalidate>
           <div class="imagem child">
             <mat-icon aria-hidden="false">lock_person</mat-icon>
           </div>
           <div class="child">
             <mat-form-field class="full-width" appearance="fill">
               <mat-label>E-mail</mat-label>
-              <input matInput placeholder="meuemail@email.com">
+              <input matInput formControlName="email" placeholder="meuemail@email.com">
             </mat-form-field>
           </div>  
           <div class="child">
             <mat-form-field class="full-width" appearance="fill">
               <mat-label>Senha</mat-label>
-              <input matInput type="password">
+              <input matInput formControlName="senha" type="password">
             </mat-form-field>
           </div>
           <div class="child">
-            <button mat-raised-button color="primary">Entrar</button>
+            <button mat-raised-button 
+                    (click)="onLogin()"
+                    [disabled]="formulario.invalid"
+                    color="primary">Entrar</button>
           </div>
           <div class="child">
             

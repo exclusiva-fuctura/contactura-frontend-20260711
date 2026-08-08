@@ -1,4 +1,4 @@
-import moment from "moment";
+import { DateTime } from 'luxon';
 
 /**
  * Converte a data para o formato YYYY-MM-DD
@@ -6,7 +6,7 @@ import moment from "moment";
  * @returns  formato de saída: YYYY-MM-DD
  */
 const convertToDateDB = (date: string): string => {
-  return moment(date).format('YYYY-MM-DD');
+  return  DateTime.fromISO(date).toFormat('YYYY-MM-DD');
 }
 
 export default convertToDateDB;

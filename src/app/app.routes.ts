@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: 'cadastro', component: Cadastro },
     { path: 'dashboard', component: Dashboard },
     { path: 'lancamentos', loadChildren: () => import('./lancamentos/lancamentos-routing-module').then(m => m.LancamentosRoutingModule) },
-    { path: 'relatorio-despesas', loadComponent: () => import('./relatorios/despesas/despesas').then(c => c.Despesas) },
-    { path: 'relatorio-receitas', loadComponent: () => import('./relatorios/receitas/receitas').then(c => c.Receitas) },
+    { path: 'relat_despesa', loadComponent: () => import('./relatorios/despesas/despesas').then(c => c.Despesas) },
+    { path: 'relat_receita', loadComponent: () => import('./relatorios/receitas/receitas').then(c => c.Receitas) },
     { path: '**', component: PageNotFound },
 ];
